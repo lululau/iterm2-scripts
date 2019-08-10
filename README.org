@@ -1,0 +1,19 @@
+This repo contains useful iTerm2 scripts.
+
+* Prerequisite
+
+  Install iTerm2 Python environment following instructions on page: [[https://www.iterm2.com/python-api/tutorial/index.html#tutorial-index][Python API Introduction]]
+
+* Scripts
+
+** alternative_tab.py
+
+   A script for switching between two alternative tabs.
+
+*** Installation
+
+    1. Copy =alternative_tab.py= to =~/Library/Application Support/iTerm2/Scripts/AutoLaunch=
+    2. Set a keybinding to =Invoke Script Functions...=, input =select_alternative_tab()=
+    3. Restart iTerm2
+
+
