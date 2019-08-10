@@ -2,7 +2,8 @@ This repo contains useful iTerm2 scripts.
 
 * Prerequisite
 
-  Install iTerm2 Python environment following instructions on page: [[https://www.iterm2.com/python-api/tutorial/index.html#tutorial-index][Python API Introduction]]
+  1. iTerm2 3.3.0+ installed.
+  2. Install the iTerm2 Python environment following instructions on page: [[https://www.iterm2.com/python-api/tutorial/index.html#tutorial-index][Python API Introduction]]
 
 * Scripts
 
