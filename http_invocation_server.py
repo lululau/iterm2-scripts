@@ -17,7 +17,7 @@ async def invoke(invocation):
         connection = await iterm2.Connection.async_create()
     return await iterm2.async_invoke_function(connection, invocation)
 
-class myHandler(BaseHTTPRequestHandler):
+class InvocationHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         global loop
@@ -32,6 +32,6 @@ class myHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes(json.dumps(return_value), "UTF-8"))
         return
 
-server = HTTPServer(('127.0.0.1', PORT_NUMBER), myHandler)
+server = HTTPServer(('127.0.0.1', PORT_NUMBER), InvocationHandler)
 
 server.serve_forever()
