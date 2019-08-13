@@ -24,4 +24,10 @@ async def main(connection):
             await session.async_activate()
     await activate_session_by_tty.async_register(connection)
 
+    @iterm2.RPC
+    async def exec_on_tab_at(tab_index, command):
+        tab = [t for t in app.current_terminal_window.tabs][tab_index]
+        await tab.current_session.async_send_text(command+"\n")
+    await exec_on_tab_at.async_register(connection)
+
 iterm2.run_forever(main)
