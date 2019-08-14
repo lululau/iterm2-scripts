@@ -64,6 +64,7 @@ async def main(connection):
     @iterm2.RPC
     async def run_ssh(host):
        tab = await find_or_create_idle_tab()
+       await app.async_activate()
        await tab.async_select()
        await exec_on_tab(tab, "clear; SSH_INTERACTIVE=1 ssh " + host)
     await run_ssh.async_register(connection)
