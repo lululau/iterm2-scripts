@@ -25,7 +25,7 @@ async def main(connection):
 
     @iterm2.RPC
     async def select_alternative_tab():
-        await app.get_tab_by_id(await app.current_terminal_window.async_get_variable("user.ALTERNATIVE_TAB_PREV_ID")).async_select()
+        await app.get_tab_by_id(await app.current_terminal_window.async_get_variable("user.ALTERNATIVE_TAB_PREV_ID")).async_activate()
     await select_alternative_tab.async_register(connection)
 
     async with iterm2.FocusMonitor(connection) as mon:
