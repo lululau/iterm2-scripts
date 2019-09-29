@@ -65,7 +65,7 @@ async def main(connection):
     async def run_ssh(host):
        tab = await find_or_create_idle_tab()
        await app.async_activate()
-       await tab.async_select()
+       await tab.async_activate()
        await exec_on_tab(tab, "clear; SSH_INTERACTIVE=1 ssh " + host)
     await run_ssh.async_register(connection)
 
@@ -73,7 +73,7 @@ async def main(connection):
     async def activate_tab_by_id(tab_id):
        await app.async_activate()
        tab = app.get_tab_by_id(tab_id)
-       await tab.async_select()
+       await tab.async_activate()
     await activate_tab_by_id.async_register(connection)
 
     @iterm2.RPC
