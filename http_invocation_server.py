@@ -37,7 +37,10 @@ def get_previous_pid():
 def kill_previous_process():
     pid = get_previous_pid()
     if pid != None:
-        os.kill(pid, signal.SIGKILL)
+        try:
+            os.kill(pid, signal.SIGKILL)
+        except:
+            pass
 
 kill_previous_process()
 save_pid()
