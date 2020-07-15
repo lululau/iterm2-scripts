@@ -6,6 +6,7 @@ import signal
 import asyncio
 import iterm2
 import json
+import time
 from http.server import BaseHTTPRequestHandler,HTTPServer
 
 PID_FILE = str(pathlib.Path("~/Library/ApplicationSupport/iTerm2/http_invocation_server.pid").expanduser())
@@ -39,6 +40,7 @@ def kill_previous_process():
     if pid != None:
         try:
             os.kill(pid, signal.SIGKILL)
+            time.sleep(1)
         except:
             pass
 
