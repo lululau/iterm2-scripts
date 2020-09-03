@@ -78,7 +78,7 @@ async def main(connection):
 
     @iterm2.RPC
     async def get_tab_commands():
-        return [{"tab_id": t.tab_id, "command": await t.current_session.async_get_variable('commandLine')} for t in app.current_terminal_window.tabs]
+        return [{"tab_id": t.tab_id, "command": await t.current_session.async_get_variable('commandLine'), "pid": await t.current_session.async_get_variable('jobPid')} for t in app.current_terminal_window.tabs]
     await get_tab_commands.async_register(connection)
 
 iterm2.run_forever(main)
