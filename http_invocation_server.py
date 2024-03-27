@@ -9,7 +9,7 @@ import json
 import time
 from http.server import BaseHTTPRequestHandler,HTTPServer
 
-PID_FILE = str(pathlib.Path("~/Library/ApplicationSupport/iTerm2/http_invocation_server.pid").expanduser())
+PID_FILE = str(pathlib.Path("~/Library/Application Support/iTerm2/http_invocation_server.pid").expanduser())
 
 PORT_NUMBER = 28082
 
